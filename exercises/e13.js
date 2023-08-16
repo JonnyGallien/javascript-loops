@@ -5,8 +5,22 @@
 // getAllAccountsWithSumsOfDepositsLess2000(bankAccounts) => [3432, 43242.34, 23432]
 
 export function getAllAccountsWithSumsOfDepositsLess2000(array) {
-  // Your code goes here...
-
+  let arr = [];
+  for (let i = 0; i < array.length; i++) {
+    let accountDeposits = array[i].deposits;
+    let sum = 0;
+    if (array[i].deposits === undefined) {
+      arr.push(array[i]);
+    } else {
+      for (let x = 0; x < accountDeposits.length; x++) {
+        sum += accountDeposits[x];
+      }
+      if (sum < 2000) {
+        arr.push(array[i]);
+      }
+    }
+  }
+  return arr;
 }
 
 

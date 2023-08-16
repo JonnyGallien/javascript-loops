@@ -6,8 +6,8 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
-
+  let arr = [].concat.apply([], array);
+  return arr;
 }
 
 
